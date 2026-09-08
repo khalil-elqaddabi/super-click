@@ -9,7 +9,7 @@
   <body>
     <main>
       <!-- home section -->
-      <section id="view-section">
+      <section id="view-home">
         <h1>click hast</h1>
         <p>test your reaction speed</p>
         <dev>
@@ -20,8 +20,8 @@
           <p>En mode Défi, la cible se déplace toute seule tous les 1 s.</p>
           <p>Bats le record de ta combinaison (mode + difficulté + durée).</p>
         </dev>
-        <button class="btn-play">play</button>
-        <button class="btn-history">history</button>
+        <button id="btn-play">play</button>
+        <button id="btn-history">history</button>
       </section>
       <!-- config section -->
       <section id="view-config" hidden>
@@ -35,10 +35,10 @@
               type="text"
               id="pseudo"
               name="pseudo"
-              minlength="2"
-              maxlength="20"
-              required
+            
+              
             />
+            <p id="psudo-error"></p>
           </div>
 
           <div>
@@ -71,6 +71,7 @@
           </div>
 
           <button type="submit">Start Game</button>
+          <button ID="prv-home">return home</button>
         </form>
       </section>
       <!-- game section -->
