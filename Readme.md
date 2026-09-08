@@ -332,5 +332,4 @@ This version is intentionally client-side only.
 ## 👤 Project
 
 **Click Fast!**  
-Nova Arcade Studio — Web Arcade Prototype  
-September 2026
+mocro— **DFT**
