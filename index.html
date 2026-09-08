@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <!-- home section -->
+      <section id="view-section">
+        <h1>click hast</h1>
+        <p>test your reaction speed</p>
+        <dev>
+          <p>rules</p>
+          <p>Clique sur la cible avant la fin du temps.</p>
+          <p>La cible se déplace après chaque clic réussi.</p>
+          <p>En mode Précision, un clic raté compte comme un miss.</p>
+          <p>En mode Défi, la cible se déplace toute seule tous les 1 s.</p>
+          <p>Bats le record de ta combinaison (mode + difficulté + durée).</p>
+        </dev>
+        <button class="btn-play">play</button>
+        <button class="btn-history">history</button>
+      </section>
+      <!-- config section -->
+      <section id="view-config" hidden>
+        <h2>Game Configuration</h2>
+
+        <form id="config-form">
+          <div>
+            <label for="pseudo">Pseudo</label>
+
+            <input
+              type="text"
+              id="pseudo"
+              name="pseudo"
+              minlength="2"
+              maxlength="20"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="mode">Mode</label>
+
+            <select id="mode" name="mode">
+              <option value="classic">Classic</option>
+              <option value="precision">Precision</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="duration">Duration</label>
+
+            <select id="duration" name="duration">
+              <option value="10">10 S</option>
+              <option value="20">20 S</option>
+              <option value="30">30 S</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="difficulty">Difficulty</label>
+
+            <select id="difficulty" name="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+
+          <button type="submit">Start Game</button>
+        </form>
+      </section>
+      <!-- game section -->
+        <section id="view-game" hidden>
+
+            <div class="game-hud">
+                <span>
+                    Time:
+                    <strong id="game-time">10</strong>
+                </span>
+
+                <span>
+                    Score:
+                    <strong id="game-score">0</strong>
+                </span>
+
+                <span>
+                    Record:
+                    <strong id="game-record">0</strong>
+                </span>
+            </div>
+
+
+            <div id="game-arena">
+
+                <button
+                    id="target"
+                    type="button"
+                    aria-label="Click target"
+                ></button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS VIEW -->
+        <section id="view-results" hidden>
+
+            <h2>Game Over</h2>
+
+            <div>
+                <p>
+                    Score:
+                    <strong id="result-score">0</strong>
+                </p>
+
+                <p>
+                    Misses:
+                    <strong id="result-misses">Not measured</strong>
+                </p>
+
+                <p>
+                    Precision:
+                    <strong id="result-precision">Not measured</strong>
+                </p>
+
+                <p id="result-record-message"></p>
+            </div>
+
+
+            <button id="btn-replay">
+                Play Again
+            </button>
+
+            <button id="btn-home">
+                Home
+            </button>
+
+        </section>
+
+
+        <!-- HISTORY VIEW -->
+        <section id="view-history" hidden>
+
+            <h2>Game History</h2>
+
+            <div class="history-controls">
+
+                <label for="history-mode">
+                    Mode
+                </label>
+
+                <select id="history-mode">
+                    <option value="all">All</option>
+                    <option value="classic">Classic</option>
+                    <option value="precision">Precision</option>
+                </select>
+
+
+                <label for="history-sort">
+                    Sort
+                </label>
+
+                <select id="history-sort">
+                    <option value="date-desc">
+                        Newest first
+                    </option>
+
+                    <option value="score-desc">
+                        Highest score
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div id="history-list"></div>
+
+
+            <p id="history-empty" hidden>
+                No games found.
+            </p>
+
+
+            <button id="btn-clear-history">
+                Clear History
+            </button>
+
+            <button id="btn-history-home">
+                Home
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="./js/app.js"></script>
+    </main>
+  </body>
+</html>
