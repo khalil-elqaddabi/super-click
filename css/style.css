@@ -1316,3 +1316,126 @@ select:focus-visible {
         transition: none !important;
     }
 }
+
+/* =========================
+   HISTORY CARD
+========================= */
+
+#history-list article {
+  padding: 22px 24px;
+  background: rgba(2, 18, 27, 0.88);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25),
+    inset 0 0 25px rgba(0, 150, 220, 0.04);
+}
+
+
+/* Header */
+
+.history-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.history-card-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.history-card-header span {
+  color: #00d9ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+
+/* Difficulty + Duration */
+
+.history-info {
+  display: flex;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.history-info span {
+  color: #6f929d;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* Stats */
+
+.history-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+
+/* One stat */
+
+.history-stat {
+  display: flex;
+  align-items: center;
+
+  min-height: 34px;
+  padding: 7px 10px;
+
+  background: rgba(0, 8, 13, 0.55);
+  border: 1px solid rgba(0, 210, 255, 0.08);
+  border-radius: 6px;
+}
+
+
+/* Icon */
+
+.stat-icon {
+  width: 28px;
+
+  color: #00d9ff;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+/* Label */
+
+.stat-label {
+  width: 90px;
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+
+/* Value */
+
+.history-stat strong {
+  color: #9eb8c0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* Hover */
+
+.history-stat:hover {
+  border-color: rgba(0, 210, 255, 0.25);
+  background: rgba(0, 20, 30, 0.7);
+}
