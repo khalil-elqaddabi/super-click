@@ -1,6 +1,18 @@
 import { showView } from "./navigation.js";
 import { gameState, resetGameStatus }  from "./story.js";
 import {startGame} from "./game.js"
+import { initHistory } from "./history.js";
+import { getSettings, saveSettings } from "./storage.js";
+
+
+
+
+const savedSettings = getSettings();
+
+document.getElementById("pseudo").value = savedSettings.pseudo;
+document.getElementById("mode").value = savedSettings.mode;
+document.getElementById("duration").value = savedSettings.duration;
+document.getElementById("difficulty").value = savedSettings.difficulty;
 
 // transiction between pages
 const btnPlay = document.getElementById("btn-play");
@@ -23,7 +35,14 @@ btnHistoryHome.addEventListener("click", function () {
 });
 const btbHistory = document.getElementById("btn-history");
 btbHistory.addEventListener("click", function () {
+    initHistory();
   showView("history");
+});
+const btnReplay = document.getElementById("btn-replay");
+
+btnReplay.addEventListener("click", () => {
+  startGame();
+  showView("game");
 });
 
 // form config
@@ -52,6 +71,15 @@ configForm.addEventListener("submit", function (e) {
   gameState.mode = modeValue;
   gameState.duration = parseInt(durationValue);
   gameState.difficulty = difficultyValue;
+
+
+  saveSettings({
+  pseudo: pseudoValue,
+  mode: modeValue,
+  duration: parseInt(durationValue),
+  difficulty: difficultyValue,
+  soundEnabled: false
+});
 
   
   
